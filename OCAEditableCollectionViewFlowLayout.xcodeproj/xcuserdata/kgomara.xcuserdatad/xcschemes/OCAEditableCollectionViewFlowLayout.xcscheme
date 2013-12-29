@@ -5,6 +5,22 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D6C7AA16186F5DC500C72A52"
+               BuildableName = "libOCAEditableCollectionViewFlowLayout.a"
+               BlueprintName = "OCAEditableCollectionViewFlowLayout"
+               ReferencedContainer = "container:OCAEditableCollectionViewFlowLayout.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -12,6 +28,16 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D6C7AA26186F5DC500C72A52"
+               BuildableName = "OCAEditableCollectionViewFlowLayoutTests.xctest"
+               BlueprintName = "OCAEditableCollectionViewFlowLayoutTests"
+               ReferencedContainer = "container:OCAEditableCollectionViewFlowLayout.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
