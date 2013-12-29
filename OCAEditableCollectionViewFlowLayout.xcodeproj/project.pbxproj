@@ -23,9 +23,7 @@
 		D6C7AA54187096F200C72A52 /* OCAEditableLayoutAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = D6C7AA4C187096F200C72A52 /* OCAEditableLayoutAttributes.h */; };
 		D6C7AA55187096F200C72A52 /* OCAEditableLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C7AA4D187096F200C72A52 /* OCAEditableLayoutAttributes.m */; };
 		D6C7AA56187096F200C72A52 /* OCAEditableLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C7AA4D187096F200C72A52 /* OCAEditableLayoutAttributes.m */; };
-		D6C7AA591870971800C72A52 /* OCAExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = D6C7AA571870971800C72A52 /* OCAExtensions.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		D6C7AA5A1870971800C72A52 /* OCAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C7AA581870971800C72A52 /* OCAExtensions.m */; };
-		D6C7AA5B1870971800C72A52 /* OCAExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C7AA581870971800C72A52 /* OCAExtensions.m */; };
+		D6C7AA591870971800C72A52 /* OCADebug.h in Headers */ = {isa = PBXBuildFile; fileRef = D6C7AA571870971800C72A52 /* OCADebug.h */; settings = {ATTRIBUTES = (Private, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +52,7 @@
 		D6C7AA4B187096F200C72A52 /* OCAEditableCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCAEditableCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		D6C7AA4C187096F200C72A52 /* OCAEditableLayoutAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCAEditableLayoutAttributes.h; sourceTree = "<group>"; };
 		D6C7AA4D187096F200C72A52 /* OCAEditableLayoutAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCAEditableLayoutAttributes.m; sourceTree = "<group>"; };
-		D6C7AA571870971800C72A52 /* OCAExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCAExtensions.h; sourceTree = "<group>"; };
-		D6C7AA581870971800C72A52 /* OCAExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCAExtensions.m; sourceTree = "<group>"; };
+		D6C7AA571870971800C72A52 /* OCADebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCADebug.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,8 +124,7 @@
 		D6C7AA1D186F5DC500C72A52 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D6C7AA571870971800C72A52 /* OCAExtensions.h */,
-				D6C7AA581870971800C72A52 /* OCAExtensions.m */,
+				D6C7AA571870971800C72A52 /* OCADebug.h */,
 				D6C7AA1E186F5DC500C72A52 /* OCAEditableCollectionViewFlowLayout-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -159,7 +155,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6C7AA591870971800C72A52 /* OCAExtensions.h in Headers */,
+				D6C7AA591870971800C72A52 /* OCADebug.h in Headers */,
 				D6C7AA4E187096F200C72A52 /* OCACollectionViewFlowLayoutCell.h in Headers */,
 				D6C7AA54187096F200C72A52 /* OCAEditableLayoutAttributes.h in Headers */,
 				D6C7AA51187096F200C72A52 /* OCAEditableCollectionViewFlowLayout.h in Headers */,
@@ -248,7 +244,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6C7AA52187096F200C72A52 /* OCAEditableCollectionViewFlowLayout.m in Sources */,
-				D6C7AA5A1870971800C72A52 /* OCAExtensions.m in Sources */,
 				D6C7AA55187096F200C72A52 /* OCAEditableLayoutAttributes.m in Sources */,
 				D6C7AA4F187096F200C72A52 /* OCACollectionViewFlowLayoutCell.m in Sources */,
 			);
@@ -261,7 +256,6 @@
 				D6C7AA50187096F200C72A52 /* OCACollectionViewFlowLayoutCell.m in Sources */,
 				D6C7AA53187096F200C72A52 /* OCAEditableCollectionViewFlowLayout.m in Sources */,
 				D6C7AA56187096F200C72A52 /* OCAEditableLayoutAttributes.m in Sources */,
-				D6C7AA5B1870971800C72A52 /* OCAExtensions.m in Sources */,
 				D6C7AA37186F5DC500C72A52 /* OCAEditableCollectionViewFlowLayoutTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

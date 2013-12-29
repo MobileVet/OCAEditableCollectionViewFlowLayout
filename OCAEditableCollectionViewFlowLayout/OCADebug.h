@@ -8,15 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-//@interface OCAExtensions : NSObject 
-//
-//+ (void)showAlertWithMessageAndType:(NSString*)theMessage 
-//                          alertType:(NSString*)theType;
-//+ (void)showErrorWithMessage:(NSString*)theMessage;
-//+ (void)showWarningWithMessage:(NSString*)theMessage;
-//
-//@end
-
 /**
  Logging macros. The are 3 versions - DLog, ALog, and ELog with the first letter signifying
  Debug only, Always log, and Error (specifically NSError) log.
