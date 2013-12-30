@@ -36,6 +36,18 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D6C7AA71187122CB00C72A52 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		D6C7AA17186F5DC500C72A52 /* libOCAEditableCollectionViewFlowLayout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOCAEditableCollectionViewFlowLayout.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6C7AA1A186F5DC500C72A52 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -172,6 +184,7 @@
 				D6C7AA13186F5DC500C72A52 /* Sources */,
 				D6C7AA14186F5DC500C72A52 /* Frameworks */,
 				D6C7AA451870957E00C72A52 /* Headers */,
+				D6C7AA71187122CB00C72A52 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -437,6 +450,7 @@
 				D6C7AA3C186F5DC500C72A52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D6C7AA3D186F5DC500C72A52 /* Build configuration list for PBXNativeTarget "OCAEditableCollectionViewFlowLayoutTests" */ = {
 			isa = XCConfigurationList;
@@ -445,6 +459,7 @@
 				D6C7AA3F186F5DC500C72A52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
