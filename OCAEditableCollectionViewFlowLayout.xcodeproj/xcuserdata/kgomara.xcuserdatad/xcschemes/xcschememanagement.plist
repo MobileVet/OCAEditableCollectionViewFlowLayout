@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>GenDocumentation.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>OCAEditableCollectionViewFlowLayout.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>D6C22C11187F9FDC008014C7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>D6C7AA16186F5DC500C72A52</key>
 		<dict>
 			<key>primary</key>

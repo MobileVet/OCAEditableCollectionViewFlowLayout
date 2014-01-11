@@ -143,7 +143,7 @@ static NSString * const kOCACollectionViewKeyPath   = @"collectionView";
 @property (strong, nonatomic) CADisplayLink *displayLink;
 
 @property (assign, nonatomic, readonly) id<OCAEditableCollectionViewDataSource>          dataSource;
-@property (assign, nonatomic, readonly) id<OCAEditableCollectionViewDelegateFlowLayout>  delegate;
+@property (assign, nonatomic, readonly) id<OCAEditableCollectionViewFlowLayoutDelegate>  delegate;
 
 @end
 
@@ -294,11 +294,11 @@ static NSString * const kOCACollectionViewKeyPath   = @"collectionView";
 
 
 //----------------------------------------------------------------------------------------------------------
-- (id<OCAEditableCollectionViewDelegateFlowLayout>)delegate
+- (id<OCAEditableCollectionViewFlowLayoutDelegate>)delegate
 {
     DLog();
     
-    return (id<OCAEditableCollectionViewDelegateFlowLayout>)self.collectionView.delegate;
+    return (id<OCAEditableCollectionViewFlowLayoutDelegate>)self.collectionView.delegate;
 }
 
 #pragma mark - Support for Springboard-like movement
@@ -620,7 +620,7 @@ static NSString * const kOCACollectionViewKeyPath   = @"collectionView";
                                       Using an assertion allows the check to be performed (at runtime) during the development process.
                                       
                                       We are using 3 "guards" to ensure the required methods are implemented:
-                                          1.  In the OCAEditableCollectionViewDelegateFlowLayout protocol definiton, we declare the method
+                                          1.  In the OCAEditableCollectionViewFlowLayoutDelegate protocol definiton, we declare the method
                                               required. However the compiler only flags this as a warning.
                                           2.  The assert statement will throw an Assertion failed exception identifying the missing method.
                                               This should catch 99.999% of coding mistakes, but assertions are NOT compiled into Release builds.
@@ -706,7 +706,7 @@ static NSString * const kOCACollectionViewKeyPath   = @"collectionView";
                                           Using an assertion allows the check to be performed (at runtime) during the development process.
                                           
                                           We are using 3 "guards" to ensure the required methods are implemented:
-                                              1.  In the OCAEditableCollectionViewDelegateFlowLayout protocol definiton, we declare the method
+                                              1.  In the OCAEditableCollectionViewFlowLayoutDelegate protocol definiton, we declare the method
                                                   required. However the compiler only flags this as a warning.
                                               2.  The assert statement will throw an Assertion failed exception identifying the missing method.
                                                   This should catch 99.999% of coding mistakes, but assertions are NOT compiled into Release builds.

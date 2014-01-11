@@ -20,6 +20,20 @@
                ReferencedContainer = "container:OCAEditableCollectionViewFlowLayout.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "NO"
+            buildForRunning = "NO"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D6C22C11187F9FDC008014C7"
+               BuildableName = "GenDocumentation"
+               BlueprintName = "GenDocumentation"
+               ReferencedContainer = "container:OCAEditableCollectionViewFlowLayout.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

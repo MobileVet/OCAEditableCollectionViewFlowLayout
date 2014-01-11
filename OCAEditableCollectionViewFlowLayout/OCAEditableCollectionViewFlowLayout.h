@@ -13,6 +13,30 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ This class adds the ability to delete and/or re-order the UICollectionViewCells in the layout.
+ 
+ In your UICollectionViewController subClass:
+ 
+         - (void)awakeFromNib
+         {
+             // Allocate our custom collectionView layout
+             OCAEditableCollectionViewFlowLayout *layout = [[OCAEditableCollectionViewFlowLayout alloc] init];
+             // ...set some parameters to control its behavior (adjust to fit the needs of your app)
+             layout.minimumInteritemSpacing  = 6;
+             layout.minimumLineSpacing       = 6;
+             layout.scrollDirection          = UICollectionViewScrollDirectionVertical;
+             layout.sectionInset             = UIEdgeInsetsMake(5, 5, 5, 5);
+             [layout setItemSize: CGSizeMake(50, 50)];
+             
+             // Set our layout on the collectionView
+             self.collectionView.collectionViewLayout = layout;
+ 
+             [super awakeFromNib];
+         }
+ 
+ */
+
 @interface OCAEditableCollectionViewFlowLayout : UICollectionViewFlowLayout <UIGestureRecognizerDelegate>
 
 @property (assign, nonatomic)           CGFloat                         scrollingSpeed;
@@ -46,7 +70,7 @@ canMoveItemAtIndexPath: (NSIndexPath *)indexPath;
 
 @end
 
-@protocol OCAEditableCollectionViewDelegateFlowLayout <UICollectionViewDelegateFlowLayout>
+@protocol OCAEditableCollectionViewFlowLayoutDelegate <UICollectionViewDelegateFlowLayout>
 
 @required
 

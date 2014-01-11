@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		D6C22C11187F9FDC008014C7 /* GenDocumentation */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = D6C22C14187F9FDC008014C7 /* Build configuration list for PBXAggregateTarget "GenDocumentation" */;
+			buildPhases = (
+				D6C22C15187F9FEA008014C7 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = GenDocumentation;
+			productName = GenDocumentation;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		D6C7AA1B186F5DC500C72A52 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6C7AA1A186F5DC500C72A52 /* Foundation.framework */; };
 		D6C7AA29186F5DC500C72A52 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6C7AA28186F5DC500C72A52 /* XCTest.framework */; };
@@ -36,19 +50,8 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		D6C7AA71187122CB00C72A52 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
+		D6C22C171881C15B008014C7 /* Readme.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme.markdown; sourceTree = "<group>"; };
 		D6C7AA17186F5DC500C72A52 /* libOCAEditableCollectionViewFlowLayout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOCAEditableCollectionViewFlowLayout.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6C7AA1A186F5DC500C72A52 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D6C7AA1E186F5DC500C72A52 /* OCAEditableCollectionViewFlowLayout-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OCAEditableCollectionViewFlowLayout-Prefix.pch"; sourceTree = "<group>"; };
@@ -93,6 +96,7 @@
 		D6C7AA0E186F5DC500C72A52 = {
 			isa = PBXGroup;
 			children = (
+				D6C22C171881C15B008014C7 /* Readme.markdown */,
 				D6C7AA1C186F5DC500C72A52 /* OCAEditableCollectionViewFlowLayout */,
 				D6C7AA30186F5DC500C72A52 /* OCAEditableCollectionViewFlowLayoutTests */,
 				D6C7AA19186F5DC500C72A52 /* Frameworks */,
@@ -184,7 +188,6 @@
 				D6C7AA13186F5DC500C72A52 /* Sources */,
 				D6C7AA14186F5DC500C72A52 /* Frameworks */,
 				D6C7AA451870957E00C72A52 /* Headers */,
-				D6C7AA71187122CB00C72A52 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -236,6 +239,7 @@
 			targets = (
 				D6C7AA16186F5DC500C72A52 /* OCAEditableCollectionViewFlowLayout */,
 				D6C7AA26186F5DC500C72A52 /* OCAEditableCollectionViewFlowLayoutTests */,
+				D6C22C11187F9FDC008014C7 /* GenDocumentation */,
 			);
 		};
 /* End PBXProject section */
@@ -250,6 +254,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D6C22C15187F9FEA008014C7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#appledoc Xcode script\n# Start constants\ncompany=\"OMaraConsultingAssociates\";\ncompanyID=\"com.omaraconsultingassoc\";\ncompanyURL=\"http://omaraconsultingassoc.com\";\ntarget=\"iphoneos\";\n#target=\"macosx\";\noutputPath=\"~/help\";\n# End constants\n/usr/local/bin/appledoc \\\n--project-name \"${PROJECT_NAME}\" \\\n--project-company \"${company}\" \\\n--company-id \"${companyID}\" \\\n--docset-atom-filename \"${company}.atom\" \\\n--docset-feed-url \"${companyURL}/${company}/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"${companyURL}/${company}/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"${companyURL}/${company}\" \\\n--output \"${outputPath}\" \\\n--publish-docset \\\n--docset-platform-family \"${target}\" \\\n--logformat xcode \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--ignore \"*.m\" \\\n--exit-threshold 2 \\\n--index-desc \"${PROJECT_DIR}/Readme.markdown\" \\\n\"${PROJECT_DIR}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D6C7AA13186F5DC500C72A52 /* Sources */ = {
@@ -295,6 +315,20 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D6C22C12187F9FDC008014C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D6C22C13187F9FDC008014C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		D6C7AA38186F5DC500C72A52 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -434,6 +468,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D6C22C14187F9FDC008014C7 /* Build configuration list for PBXAggregateTarget "GenDocumentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6C22C12187F9FDC008014C7 /* Debug */,
+				D6C22C13187F9FDC008014C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		D6C7AA12186F5DC500C72A52 /* Build configuration list for PBXProject "OCAEditableCollectionViewFlowLayout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
