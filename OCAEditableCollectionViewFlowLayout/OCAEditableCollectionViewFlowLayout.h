@@ -70,7 +70,7 @@ canMoveItemAtIndexPath: (NSIndexPath *)indexPath;
 
 @end
 
-@protocol OCAEditableCollectionViewFlowLayoutDelegate <UICollectionViewDelegateFlowLayout>
+@protocol OCAEditableCollectionViewDelegateFlowLayout <UICollectionViewDelegateFlowLayout>
 
 @required
 
