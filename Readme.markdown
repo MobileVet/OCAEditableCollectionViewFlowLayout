@@ -1,38 +1,38 @@
-About OCAEditCollectionViewFlowLayout
+#About OCAEditCollectionViewFlowLayout
 ==============
 
 OCAEditCollectionViewFlowLayout is subclass of UICollectionViewFlowLayout that adds the ability to re-order and/or delete member cells.
 
 
-Quick install
+##Quick install
 =============
 
 Coming - add instructions to use as a Git Subproject
 
-Using OCAEditCollectionViewFlowLayout
+##Using OCAEditCollectionViewFlowLayout
 ==============
 
 Coming - add instructions to integrate
 
-Installation tips
+###Installation tips
 -----------------
 
 To keep up to date, issue `git pull` either from the terminal or within Xcode. If you've included OCAEditCollectionViewFlowLayout as a SubProject and added it as a dependency of your main application, it will rebuild automatically. 
 
-Integrating with Xcode
+###Integrating with Xcode
 -----------------
 
 Coming - add instructions to add build dependency.
 
 
-Troubleshooting
+###Troubleshooting
 ---------------
 
 Have problems? This is what you can do to troubleshoot:
 
 TBD
 
-Minimum system requirements
+###Minimum system requirements
 ---------------------------
 
 - Xcode 5 or greater for compiling

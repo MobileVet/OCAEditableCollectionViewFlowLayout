@@ -171,8 +171,8 @@
 		D6C7AA0E186F5DC500C72A52 = {
 			isa = PBXGroup;
 			children = (
-				D69889FD1883182100DEC402 /* Documentation */,
 				D6C22C171881C15B008014C7 /* Readme.markdown */,
+				D69889FD1883182100DEC402 /* Documentation */,
 				D6C7AA1C186F5DC500C72A52 /* OCAEditableCollectionViewFlowLayout */,
 				D6C7AA30186F5DC500C72A52 /* OCAEditableCollectionViewFlowLayoutTests */,
 				D6C7AA19186F5DC500C72A52 /* Frameworks */,
