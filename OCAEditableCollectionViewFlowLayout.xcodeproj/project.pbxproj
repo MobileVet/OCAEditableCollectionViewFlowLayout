@@ -51,6 +51,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D6988A001883182100DEC402 /* OCACollectionViewFlowLayoutCell.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.documentation; path = OCACollectionViewFlowLayoutCell.html; sourceTree = "<group>"; };
+		D6988A011883182100DEC402 /* OCAEditableCollectionViewFlowLayout.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.documentation; path = OCAEditableCollectionViewFlowLayout.html; sourceTree = "<group>"; };
+		D6988A021883182100DEC402 /* OCAEditableLayoutAttributes.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.documentation; path = OCAEditableLayoutAttributes.html; sourceTree = "<group>"; };
+		D6988A041883182100DEC402 /* styles.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = styles.css; sourceTree = "<group>"; };
+		D6988A051883182100DEC402 /* stylesPrint.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = stylesPrint.css; sourceTree = "<group>"; };
+		D6988A061883182100DEC402 /* hierarchy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.documentation; path = hierarchy.html; sourceTree = "<group>"; };
+		D6988A081883182100DEC402 /* button_bar_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_bar_background.png; sourceTree = "<group>"; };
+		D6988A091883182100DEC402 /* disclosure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disclosure.png; sourceTree = "<group>"; };
+		D6988A0A1883182100DEC402 /* disclosure_open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disclosure_open.png; sourceTree = "<group>"; };
+		D6988A0B1883182100DEC402 /* library_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = library_background.png; sourceTree = "<group>"; };
+		D6988A0C1883182100DEC402 /* title_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title_background.png; sourceTree = "<group>"; };
+		D6988A0D1883182100DEC402 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.documentation; path = index.html; sourceTree = "<group>"; };
+		D6988A0F1883182100DEC402 /* OCAEditableCollectionViewDataSource.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.documentation; path = OCAEditableCollectionViewDataSource.html; sourceTree = "<group>"; };
+		D6988A101883182100DEC402 /* OCAEditableCollectionViewDelegateFlowLayout.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.documentation; path = OCAEditableCollectionViewDelegateFlowLayout.html; sourceTree = "<group>"; };
 		D6C22C171881C15B008014C7 /* Readme.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme.markdown; sourceTree = "<group>"; };
 		D6C7AA17186F5DC500C72A52 /* libOCAEditableCollectionViewFlowLayout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOCAEditableCollectionViewFlowLayout.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6C7AA1A186F5DC500C72A52 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -93,9 +107,71 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D69889FD1883182100DEC402 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				D69889FE1883182100DEC402 /* html */,
+			);
+			path = Documentation;
+			sourceTree = "<group>";
+		};
+		D69889FE1883182100DEC402 /* html */ = {
+			isa = PBXGroup;
+			children = (
+				D69889FF1883182100DEC402 /* Classes */,
+				D6988A031883182100DEC402 /* css */,
+				D6988A061883182100DEC402 /* hierarchy.html */,
+				D6988A071883182100DEC402 /* img */,
+				D6988A0D1883182100DEC402 /* index.html */,
+				D6988A0E1883182100DEC402 /* Protocols */,
+			);
+			path = html;
+			sourceTree = "<group>";
+		};
+		D69889FF1883182100DEC402 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D6988A001883182100DEC402 /* OCACollectionViewFlowLayoutCell.html */,
+				D6988A011883182100DEC402 /* OCAEditableCollectionViewFlowLayout.html */,
+				D6988A021883182100DEC402 /* OCAEditableLayoutAttributes.html */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		D6988A031883182100DEC402 /* css */ = {
+			isa = PBXGroup;
+			children = (
+				D6988A041883182100DEC402 /* styles.css */,
+				D6988A051883182100DEC402 /* stylesPrint.css */,
+			);
+			path = css;
+			sourceTree = "<group>";
+		};
+		D6988A071883182100DEC402 /* img */ = {
+			isa = PBXGroup;
+			children = (
+				D6988A081883182100DEC402 /* button_bar_background.png */,
+				D6988A091883182100DEC402 /* disclosure.png */,
+				D6988A0A1883182100DEC402 /* disclosure_open.png */,
+				D6988A0B1883182100DEC402 /* library_background.png */,
+				D6988A0C1883182100DEC402 /* title_background.png */,
+			);
+			path = img;
+			sourceTree = "<group>";
+		};
+		D6988A0E1883182100DEC402 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D6988A0F1883182100DEC402 /* OCAEditableCollectionViewDataSource.html */,
+				D6988A101883182100DEC402 /* OCAEditableCollectionViewDelegateFlowLayout.html */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		D6C7AA0E186F5DC500C72A52 = {
 			isa = PBXGroup;
 			children = (
+				D69889FD1883182100DEC402 /* Documentation */,
 				D6C22C171881C15B008014C7 /* Readme.markdown */,
 				D6C7AA1C186F5DC500C72A52 /* OCAEditableCollectionViewFlowLayout */,
 				D6C7AA30186F5DC500C72A52 /* OCAEditableCollectionViewFlowLayoutTests */,
@@ -267,7 +343,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#appledoc Xcode script\n# Start constants\ncompany=\"OMaraConsultingAssociates\";\ncompanyID=\"com.omaraconsultingassoc\";\ncompanyURL=\"http://omaraconsultingassoc.com\";\ntarget=\"iphoneos\";\n#target=\"macosx\";\noutputPath=\"~/help\";\n# End constants\n/usr/local/bin/appledoc \\\n--project-name \"${PROJECT_NAME}\" \\\n--project-company \"${company}\" \\\n--company-id \"${companyID}\" \\\n--docset-atom-filename \"${company}.atom\" \\\n--docset-feed-url \"${companyURL}/${company}/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"${companyURL}/${company}/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"${companyURL}/${company}\" \\\n--output \"${outputPath}\" \\\n--publish-docset \\\n--docset-platform-family \"${target}\" \\\n--logformat xcode \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--ignore \"*.m\" \\\n--exit-threshold 2 \\\n--index-desc \"${PROJECT_DIR}/Readme.markdown\" \\\n\"${PROJECT_DIR}\"";
+			shellScript = "#appledoc Xcode script\n# Start constants\ncompany=\"OMaraConsultingAssociates\";\ncompanyID=\"com.omaraconsultingassoc\";\ncompanyURL=\"http://omaraconsultingassoc.com\";\ntarget=\"iphoneos\";\n#target=\"macosx\";\noutputPath=\"/tmp/appledoc\";\n# End constants\n/usr/local/bin/appledoc \\\n--project-name \"${PROJECT_NAME}\" \\\n--project-company \"${company}\" \\\n--company-id \"${companyID}\" \\\n--docset-atom-filename \"${company}.atom\" \\\n--docset-feed-url \"${companyURL}/${company}/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"${companyURL}/${company}/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"${companyURL}/${company}\" \\\n--output \"${outputPath}\" \\\n--publish-docset \\\n--docset-platform-family \"${target}\" \\\n--logformat xcode \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--ignore \"*.m\" \\\n--exit-threshold 2 \\\n--index-desc \"${PROJECT_DIR}/Readme.markdown\" \\\n\"${PROJECT_DIR}\"\necho \"Build successful, copying to project folder \"\necho ${PROJECT_DIR}/Documentation\nrsync -rv ${outputPath}/html ${PROJECT_DIR}/Documentation\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -475,6 +551,7 @@
 				D6C22C13187F9FDC008014C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D6C7AA12186F5DC500C72A52 /* Build configuration list for PBXProject "OCAEditableCollectionViewFlowLayout" */ = {
 			isa = XCConfigurationList;

@@ -41,5 +41,5 @@ Minimum system requirements
 License
 =======
 
-OCAEditCollectionViewFlowLayout is licensed MIT license.
+OCAEditCollectionViewFlowLayout is licensed under MIT license.
 

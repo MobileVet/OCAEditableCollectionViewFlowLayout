@@ -3,7 +3,7 @@
 //  KOResume
 //
 //  Created by Kevin O'Mara on 8/28/13.
-//  Copyright (c) 2013 O'Mara Consulting Associates. All rights reserved.
+//  Copyright (c) 2013-2014 O'Mara Consulting Associates. All rights reserved.
 //
 //  Portions created by:
 //  Created by Stan Chang Khin Boon on 1/10/12.

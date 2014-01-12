@@ -3,13 +3,19 @@
 //  KOResume
 //
 //  Created by Kevin O'Mara on 10/28/13.
-//  Copyright (c) 2013 O'Mara Consulting Associates. All rights reserved.
+//  Copyright (c) 2013-2014 O'Mara Consulting Associates. All rights reserved.
 //
 
 #import "OCACollectionViewFlowLayoutCell.h"
 #import "OCAEditableLayoutAttributes.h"
 
 #define MARGIN 10
+
+@interface OCACollectionViewFlowLayoutCell ()
+
+@property (nonatomic, strong)   IBOutlet UIButton   *deleteButton;
+
+@end
 
 @implementation OCACollectionViewFlowLayoutCell
 
@@ -23,8 +29,8 @@ static UIImage *deleteButtonImg;
     
     self.backgroundColor = [UIColor darkGrayColor];
     
-    self.layer.cornerRadius = 5.0f;
-    self.viewForBaselineLayout.layer.cornerRadius = 2.0f;
+    self.layer.cornerRadius                         = 5.0f;
+    self.viewForBaselineLayout.layer.cornerRadius   = 2.0f;
     
     self.deleteButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 32, 32)];
     if (!deleteButtonImg)
@@ -32,8 +38,8 @@ static UIImage *deleteButtonImg;
         CGRect buttonFrame  = self.deleteButton.frame;
         UIGraphicsBeginImageContext(buttonFrame.size);
         
-        CGContextRef context = UIGraphicsGetCurrentContext();
-        CGSize  myShadowOffset = CGSizeMake (1,  3);
+        CGContextRef context    = UIGraphicsGetCurrentContext();
+        CGSize  myShadowOffset  = CGSizeMake (1,  3);
         CGContextSaveGState(context);
         CGContextSetShadow (context, myShadowOffset, 5);
 

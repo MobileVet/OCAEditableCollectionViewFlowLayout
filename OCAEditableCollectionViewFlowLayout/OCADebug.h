@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 
 /**
- Logging macros. The are 3 versions - DLog, ALog, and ELog with the first letter signifying
+ Logging macros copied from OCAUtilities (see https://github.com/kgomara/OCAUtilities for details).
+ 
+ The are 3 versions - DLog, ALog, and ELog with the first letter signifying
  Debug only, Always log, and Error (specifically NSError) log.
  
  All the log macros display class, method, and line. This can result in "wide" messages,

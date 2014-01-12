@@ -14,7 +14,7 @@
 - (id)copyWithZone:(NSZone *)zone
 {
     OCAEditableLayoutAttributes *attributes = [super copyWithZone:zone];
-    attributes.deleteButtonHidden = _deleteButtonHidden;
+    attributes.deleteButtonHidden           = _deleteButtonHidden;
     
     return attributes;
 }
