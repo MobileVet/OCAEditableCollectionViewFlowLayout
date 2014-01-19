@@ -13,4 +13,9 @@
  */
 @interface OCACollectionViewFlowLayoutCell : UICollectionViewCell
 
+/**
+ The IBOutlet for the delete button
+ */
+@property (nonatomic, strong)   IBOutlet UIButton   *deleteButton;
+
 @end

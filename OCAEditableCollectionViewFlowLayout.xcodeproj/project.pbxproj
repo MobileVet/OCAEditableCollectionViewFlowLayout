@@ -50,6 +50,18 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D65C91BB188C3E5900BF390B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		D6988A001883182100DEC402 /* OCACollectionViewFlowLayoutCell.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.documentation; path = OCACollectionViewFlowLayoutCell.html; sourceTree = "<group>"; };
 		D6988A011883182100DEC402 /* OCAEditableCollectionViewFlowLayout.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.documentation; path = OCAEditableCollectionViewFlowLayout.html; sourceTree = "<group>"; };
@@ -264,6 +276,7 @@
 				D6C7AA13186F5DC500C72A52 /* Sources */,
 				D6C7AA14186F5DC500C72A52 /* Frameworks */,
 				D6C7AA451870957E00C72A52 /* Headers */,
+				D65C91BB188C3E5900BF390B /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -486,7 +499,7 @@
 				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "include/$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -500,7 +513,7 @@
 				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "include/$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

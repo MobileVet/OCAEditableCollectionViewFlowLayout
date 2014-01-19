@@ -13,8 +13,6 @@
 
 @interface OCACollectionViewFlowLayoutCell ()
 
-@property (nonatomic, strong)   IBOutlet UIButton   *deleteButton;
-
 @end
 
 @implementation OCACollectionViewFlowLayoutCell
