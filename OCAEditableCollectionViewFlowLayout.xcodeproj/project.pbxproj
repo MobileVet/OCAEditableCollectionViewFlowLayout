@@ -28,10 +28,10 @@
 		D6C7AA2F186F5DC500C72A52 /* libOCAEditableCollectionViewFlowLayout.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6C7AA17186F5DC500C72A52 /* libOCAEditableCollectionViewFlowLayout.a */; };
 		D6C7AA35186F5DC500C72A52 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D6C7AA33186F5DC500C72A52 /* InfoPlist.strings */; };
 		D6C7AA37186F5DC500C72A52 /* OCAEditableCollectionViewFlowLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C7AA36186F5DC500C72A52 /* OCAEditableCollectionViewFlowLayoutTests.m */; };
-		D6C7AA4E187096F200C72A52 /* OCACollectionViewFlowLayoutCell.h in Headers */ = {isa = PBXBuildFile; fileRef = D6C7AA48187096F200C72A52 /* OCACollectionViewFlowLayoutCell.h */; };
+		D6C7AA4E187096F200C72A52 /* OCACollectionViewFlowLayoutCell.h in Headers */ = {isa = PBXBuildFile; fileRef = D6C7AA48187096F200C72A52 /* OCACollectionViewFlowLayoutCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D6C7AA4F187096F200C72A52 /* OCACollectionViewFlowLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C7AA49187096F200C72A52 /* OCACollectionViewFlowLayoutCell.m */; };
 		D6C7AA50187096F200C72A52 /* OCACollectionViewFlowLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C7AA49187096F200C72A52 /* OCACollectionViewFlowLayoutCell.m */; };
-		D6C7AA51187096F200C72A52 /* OCAEditableCollectionViewFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = D6C7AA4A187096F200C72A52 /* OCAEditableCollectionViewFlowLayout.h */; };
+		D6C7AA51187096F200C72A52 /* OCAEditableCollectionViewFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = D6C7AA4A187096F200C72A52 /* OCAEditableCollectionViewFlowLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D6C7AA52187096F200C72A52 /* OCAEditableCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C7AA4B187096F200C72A52 /* OCAEditableCollectionViewFlowLayout.m */; };
 		D6C7AA53187096F200C72A52 /* OCAEditableCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C7AA4B187096F200C72A52 /* OCAEditableCollectionViewFlowLayout.m */; };
 		D6C7AA54187096F200C72A52 /* OCAEditableLayoutAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = D6C7AA4C187096F200C72A52 /* OCAEditableLayoutAttributes.h */; };
@@ -247,10 +247,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6C7AA591870971800C72A52 /* OCADebug.h in Headers */,
-				D6C7AA4E187096F200C72A52 /* OCACollectionViewFlowLayoutCell.h in Headers */,
-				D6C7AA54187096F200C72A52 /* OCAEditableLayoutAttributes.h in Headers */,
 				D6C7AA51187096F200C72A52 /* OCAEditableCollectionViewFlowLayout.h in Headers */,
+				D6C7AA4E187096F200C72A52 /* OCACollectionViewFlowLayoutCell.h in Headers */,
+				D6C7AA591870971800C72A52 /* OCADebug.h in Headers */,
+				D6C7AA54187096F200C72A52 /* OCAEditableLayoutAttributes.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
