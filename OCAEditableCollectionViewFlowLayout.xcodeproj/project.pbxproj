@@ -21,6 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		D65C91BC188C3F1500BF390B /* OCACollectionViewFlowLayoutCell.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D6C7AA48187096F200C72A52 /* OCACollectionViewFlowLayoutCell.h */; };
+		D65C91BD188C3F1500BF390B /* OCAEditableCollectionViewFlowLayout.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D6C7AA4A187096F200C72A52 /* OCAEditableCollectionViewFlowLayout.h */; };
 		D6C7AA1B186F5DC500C72A52 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6C7AA1A186F5DC500C72A52 /* Foundation.framework */; };
 		D6C7AA29186F5DC500C72A52 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6C7AA28186F5DC500C72A52 /* XCTest.framework */; };
 		D6C7AA2A186F5DC500C72A52 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6C7AA1A186F5DC500C72A52 /* Foundation.framework */; };
@@ -28,16 +30,12 @@
 		D6C7AA2F186F5DC500C72A52 /* libOCAEditableCollectionViewFlowLayout.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6C7AA17186F5DC500C72A52 /* libOCAEditableCollectionViewFlowLayout.a */; };
 		D6C7AA35186F5DC500C72A52 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D6C7AA33186F5DC500C72A52 /* InfoPlist.strings */; };
 		D6C7AA37186F5DC500C72A52 /* OCAEditableCollectionViewFlowLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C7AA36186F5DC500C72A52 /* OCAEditableCollectionViewFlowLayoutTests.m */; };
-		D6C7AA4E187096F200C72A52 /* OCACollectionViewFlowLayoutCell.h in Headers */ = {isa = PBXBuildFile; fileRef = D6C7AA48187096F200C72A52 /* OCACollectionViewFlowLayoutCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D6C7AA4F187096F200C72A52 /* OCACollectionViewFlowLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C7AA49187096F200C72A52 /* OCACollectionViewFlowLayoutCell.m */; };
 		D6C7AA50187096F200C72A52 /* OCACollectionViewFlowLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C7AA49187096F200C72A52 /* OCACollectionViewFlowLayoutCell.m */; };
-		D6C7AA51187096F200C72A52 /* OCAEditableCollectionViewFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = D6C7AA4A187096F200C72A52 /* OCAEditableCollectionViewFlowLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D6C7AA52187096F200C72A52 /* OCAEditableCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C7AA4B187096F200C72A52 /* OCAEditableCollectionViewFlowLayout.m */; };
 		D6C7AA53187096F200C72A52 /* OCAEditableCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C7AA4B187096F200C72A52 /* OCAEditableCollectionViewFlowLayout.m */; };
-		D6C7AA54187096F200C72A52 /* OCAEditableLayoutAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = D6C7AA4C187096F200C72A52 /* OCAEditableLayoutAttributes.h */; };
 		D6C7AA55187096F200C72A52 /* OCAEditableLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C7AA4D187096F200C72A52 /* OCAEditableLayoutAttributes.m */; };
 		D6C7AA56187096F200C72A52 /* OCAEditableLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C7AA4D187096F200C72A52 /* OCAEditableLayoutAttributes.m */; };
-		D6C7AA591870971800C72A52 /* OCADebug.h in Headers */ = {isa = PBXBuildFile; fileRef = D6C7AA571870971800C72A52 /* OCADebug.h */; settings = {ATTRIBUTES = (Private, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,9 +52,11 @@
 		D65C91BB188C3E5900BF390B /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 7;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
 			files = (
+				D65C91BC188C3F1500BF390B /* OCACollectionViewFlowLayoutCell.h in CopyFiles */,
+				D65C91BD188C3F1500BF390B /* OCAEditableCollectionViewFlowLayout.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,20 +254,6 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		D6C7AA451870957E00C72A52 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D6C7AA51187096F200C72A52 /* OCAEditableCollectionViewFlowLayout.h in Headers */,
-				D6C7AA4E187096F200C72A52 /* OCACollectionViewFlowLayoutCell.h in Headers */,
-				D6C7AA591870971800C72A52 /* OCADebug.h in Headers */,
-				D6C7AA54187096F200C72A52 /* OCAEditableLayoutAttributes.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
 		D6C7AA16186F5DC500C72A52 /* OCAEditableCollectionViewFlowLayout */ = {
 			isa = PBXNativeTarget;
@@ -275,7 +261,6 @@
 			buildPhases = (
 				D6C7AA13186F5DC500C72A52 /* Sources */,
 				D6C7AA14186F5DC500C72A52 /* Frameworks */,
-				D6C7AA451870957E00C72A52 /* Headers */,
 				D65C91BB188C3E5900BF390B /* CopyFiles */,
 			);
 			buildRules = (
@@ -451,7 +436,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 			};
