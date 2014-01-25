@@ -8,10 +8,15 @@
 
 #import "OCACollectionViewFlowLayoutCell.h"
 #import "OCAEditableLayoutAttributes.h"
+#import "OCAEditableCollectionViewFlowLayout.h"
 
 #define MARGIN 10
 
 @interface OCACollectionViewFlowLayoutCell ()
+{
+@private
+    OCAEditableCollectionViewFlowLayout *deleteDelegate;
+}
 
 @end
 
@@ -74,10 +79,16 @@ static UIImage *deleteButtonImg;
         CGContextRestoreGState(context);
         UIGraphicsEndImageContext();
     }
+    // Set the image for the delete button
     [self.deleteButton setImage: deleteButtonImg
                        forState: UIControlStateNormal];
+    // ...and the handler for button presses
+    [self.deleteButton addTarget: self
+                          action: @selector(didPressDeleteButton)
+                forControlEvents: UIControlEventTouchUpInside];
+    // ...make if hidden initially
     [self.deleteButton setHidden: YES];
-    
+    // ...and add it to the cell's contentView
     [self.contentView addSubview: self.deleteButton];
 }
 
@@ -130,6 +141,18 @@ static UIImage *deleteButtonImg;
         [self.deleteButton setHidden:NO];
         [self startQuivering];
     }
+    if (layoutAttributes.deleteButtonDelegate) {
+        self->deleteDelegate = layoutAttributes.deleteButtonDelegate;
+    }
+}
+
+//----------------------------------------------------------------------------------------------------------
+- (void)didPressDeleteButton
+{
+    DLog();
+    
+    assert(deleteDelegate);
+    [deleteDelegate didPressDeleteButton: [self.contentView center]];
 }
 
 @end

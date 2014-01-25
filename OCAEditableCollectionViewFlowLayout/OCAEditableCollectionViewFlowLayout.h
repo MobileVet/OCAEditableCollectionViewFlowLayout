@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OCACollectionViewFlowLayoutCell.h"
 
 /**
  This class adds the ability to delete and/or re-order the UICollectionViewCells in the layout.
@@ -41,7 +42,7 @@
  
  */
 
-@interface OCAEditableCollectionViewFlowLayout : UICollectionViewFlowLayout <UIGestureRecognizerDelegate>
+@interface OCAEditableCollectionViewFlowLayout : UICollectionViewFlowLayout <UIGestureRecognizerDelegate, OCACollectionViewFlowLayoutCellDelegate>
 
 /**
  Controls the collection view's scrolling speed
@@ -79,6 +80,7 @@
         [gestureRecognizer requireGestureRecognizerToFail: layout.tapGestureRecognizer];
  */
 @property (strong, nonatomic, readonly) UITapGestureRecognizer          *tapGestureRecognizer;
+
 
 @end
 
@@ -133,9 +135,36 @@ canMoveItemAtIndexPath: (NSIndexPath *)indexPath;
        itemAtIndexPath: (NSIndexPath *)fromIndexPath
     canMoveToIndexPath: (NSIndexPath *)toIndexPath;
 
-// TODO add can, will, didDelete
+/**
+ Ask the delegate if the cell at indexPath can be deleted.
+ 
+ @param collectionView  the UICollectionView containing the cell.
+ @param indexPath       the indexPath of the cell.
+ @return                            YES if the delete is allowed, NO otherwise
+ */
+- (BOOL)    collectionView: (UICollectionView *)collectionView
+  canDeleteItemAtIndexPath: (NSIndexPath *)indexPath;
+
+/**
+ Inform the delegate the cell at indexPath is about to be deleted.
+ 
+ @param collectionView  the UICollectionView containing the cell.
+ @param indexPath       the indexPath of the cell about to be deleted.
+ */
+- (void)    collectionView: (UICollectionView *)collectionView
+ willDeleteItemAtIndexPath: (NSIndexPath *)indexPath;
+
+/**
+ Inform the delegate the cell at indexPath was deleted.
+ 
+ @param collectionView  the UICollectionView containing the cell.
+ @param indexPath       the indexPath of the deleted cell.
+ */
+- (void)    collectionView: (UICollectionView *)collectionView
+  didDeleteItemAtIndexPath: (NSIndexPath *)indexPath;
 
 @end
+
 
 /**
  An object that adopts OCAEditableCollectionViewDelegateFlowLayout will be notified of and may control the order of the cells in the collection view.
@@ -217,6 +246,7 @@ canMoveItemAtIndexPath: (NSIndexPath *)indexPath;
  */
 - (BOOL)shouldEnableEditingForCollectionView: (UICollectionView *)collectionView
                                       layout: (UICollectionViewLayout *)collectionViewLayout;
+
 
 
 @end

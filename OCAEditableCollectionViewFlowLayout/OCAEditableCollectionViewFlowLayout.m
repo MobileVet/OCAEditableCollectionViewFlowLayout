@@ -250,7 +250,7 @@ static NSString * const kOCACollectionViewKeyPath   = @"collectionView";
     DLog();
     
     // stop any timers
-    [self invalidatesScrollTimer];
+    [self invalidateScrollTimer];
     
     // ...and remove ourself as observer as needed
     [self removeObserver: self
@@ -271,16 +271,7 @@ static NSString * const kOCACollectionViewKeyPath   = @"collectionView";
     } else {
         layoutAttributes.deleteButtonHidden = YES;
     }
-    
-    // TODO - need to get the cells to re-draw. It seems like the cell implementation of applyLayoutAttributes isn't called (sometimes)
-//    if (layoutAttributes.isDeleteButtonHidden) {
-//        self.deleteButton.layer.opacity = 0.0;
-//        [self stopQuivering];
-//    } else {
-//        self.deleteButton.layer.opacity = 1.0;
-//        [self startQuivering];
-//    }
- }
+}
 
 #pragma mark - Convenience methods to get delegate references
 
@@ -343,7 +334,7 @@ static NSString * const kOCACollectionViewKeyPath   = @"collectionView";
                     willMoveToIndexPath: newIndexPath];
     }
     
-    // ...and finally, do the move by deleting the item from where it was and inserting it where it is now
+    // ...and finally, the move the item
     /*
      To understand the purpose of declaring the __weak reference to self, see:
      https://developer.apple.com/library/ios/documentation/cocoa/conceptual/ProgrammingWithObjectiveC/WorkingwithBlocks/WorkingwithBlocks.html#//apple_ref/doc/uid/TP40011210-CH8-SW16
@@ -373,7 +364,7 @@ static NSString * const kOCACollectionViewKeyPath   = @"collectionView";
 
 
 //----------------------------------------------------------------------------------------------------------
-- (void)invalidatesScrollTimer
+- (void)invalidateScrollTimer
 {
     DLog();
     
@@ -402,7 +393,7 @@ static NSString * const kOCACollectionViewKeyPath   = @"collectionView";
     }
     
     // Invalidate the timer
-    [self invalidatesScrollTimer];
+    [self invalidateScrollTimer];
     
     // Instantiate a new CADisplayLink timer
     self.displayLink = [CADisplayLink displayLinkWithTarget: self
@@ -413,6 +404,67 @@ static NSString * const kOCACollectionViewKeyPath   = @"collectionView";
     // ...and add it to the mainRunLoop so handleScroll: starts getting notifications
     [self.displayLink addToRunLoop: [NSRunLoop mainRunLoop]
                            forMode: NSRunLoopCommonModes];
+}
+
+#pragma mark - Support for delete
+
+//----------------------------------------------------------------------------------------------------------
+/**
+ Called by a cell when the user presses the delete button
+ 
+ Implements the can, will, didDelete (optional) methods on the datasource delegate.
+ */
+- (void)didPressDeleteButton:(CGPoint)cellCenterPoint
+{
+    DLog();
+    
+    // Get the indexPath of the cell
+    NSIndexPath *currentIndexPath = [self.collectionView indexPathForItemAtPoint: cellCenterPoint];
+    DLog(@"currentIndexPath=%@", currentIndexPath.debugDescription);
+    
+    // If the delegate wants to OK deleting items
+    if ([self.dataSource respondsToSelector: @selector(collectionView:canDeleteItemAtIndexPath:)]) {
+        // ...ask for permission to move this item
+        if (![self.dataSource collectionView: self.collectionView
+                      canDeleteItemAtIndexPath: currentIndexPath]) {
+            // ...delegate says NO, just return
+            return;
+        }
+    }
+
+    // Delegate either does not care or says it is OK to delete the cell
+    // Check if the delegate wants to know we are about to delete this item
+    if ([self.dataSource respondsToSelector: @selector(collectionView:willDeleteItemAtIndexPath:)]) {
+        // ...if so, inform the delegate we are deleting the item at indexPath
+        [self.dataSource collectionView: self.collectionView
+              willDeleteItemAtIndexPath: self.selectedItemIndexPath];
+    }
+    
+    // ...and finally, the delete the item using the collectionView's performBatchUpdates
+    /*
+     To understand the purpose of declaring the __weak reference to self, see:
+     https://developer.apple.com/library/ios/documentation/cocoa/conceptual/ProgrammingWithObjectiveC/WorkingwithBlocks/WorkingwithBlocks.html#//apple_ref/doc/uid/TP40011210-CH8-SW16
+     */
+    __weak typeof(self) weakSelf = self;
+    [self.collectionView performBatchUpdates: ^{
+        DLog();
+        __strong typeof(self) strongSelf = weakSelf;
+        if (strongSelf) {
+            [strongSelf.collectionView deleteItemsAtIndexPaths:@[currentIndexPath]];
+        }
+    } completion: ^(BOOL finished) {
+        DLog();
+        // ...on completion, if the datasource implements the didMoveToIndexPath method,
+        __strong typeof(self) strongSelf = weakSelf;
+        if ([strongSelf.dataSource respondsToSelector: @selector(collectionView:didDeleteItemAtIndexPath:)]) {
+            // ...call it
+            [strongSelf.dataSource collectionView: strongSelf.collectionView
+                         didDeleteItemAtIndexPath: currentIndexPath];
+        }
+    }];
+    
+    [self invalidateLayout];
+    
 }
 
 #pragma mark - OCAEditableLayoutAttributes helper methods
@@ -680,7 +732,7 @@ static NSString * const kOCACollectionViewKeyPath   = @"collectionView";
                                          UICollectionViewLayoutAttributes *layoutAttributes = [self layoutAttributesForItemAtIndexPath: currentIndexPath];
                                          // ...and set its center point
                                          strongSelf.currentView.center      = layoutAttributes.center;
-                                         // ...find the views we're interested in using the tags we set above (see comments above)
+                                         // ...find the views we're interested in, using the tags we set above (see comments above)
                                          UIView *hilightedView              = [self.currentView viewWithTag: kOCAHighlightedImageViewTag];
                                          UIView *unHilightedView            = [self.currentView viewWithTag: kOCAUnHighlightedImageViewTag];
                                          // ...fade out the highlightedImageView
@@ -784,7 +836,7 @@ static NSString * const kOCACollectionViewKeyPath   = @"collectionView";
                             [self setupScrollTimerInDirection: OCAScrollingDirectionDown];
                         } else {
                             // ...the cell is somewhere between top and bottom - no scrolling required, so invalidate the scroll timer
-                            [self invalidatesScrollTimer];
+                            [self invalidateScrollTimer];
                         }
                     }
                     break;
@@ -804,7 +856,7 @@ static NSString * const kOCACollectionViewKeyPath   = @"collectionView";
                             [self setupScrollTimerInDirection: OCAScrollingDirectionRight];
                         } else {
                             // ...the cell is somewhere between left and right - no scrolling required, so invalidate the scroll timer
-                            [self invalidatesScrollTimer];
+                            [self invalidateScrollTimer];
                         }
                     }
                     break;
@@ -818,7 +870,7 @@ static NSString * const kOCACollectionViewKeyPath   = @"collectionView";
         case UIGestureRecognizerStateCancelled:     // This case falls through into UIGestureRecognizerStateEnded:
         case UIGestureRecognizerStateEnded: {
             // User has finished dragging, invalidate the scroll timer
-            [self invalidatesScrollTimer];
+            [self invalidateScrollTimer];
             break;
         }
             
@@ -1024,7 +1076,7 @@ static NSString * const kOCACollectionViewKeyPath   = @"collectionView";
             [self setupCollectionView];
         } else {
             // ...we're probably going away
-            [self invalidatesScrollTimer];
+            [self invalidateScrollTimer];
         }
     }
 }
