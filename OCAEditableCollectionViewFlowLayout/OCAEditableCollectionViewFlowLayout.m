@@ -353,8 +353,8 @@ static NSString * const kOCACollectionViewKeyPath   = @"collectionView";
         DLog();
         __strong typeof(self) strongSelf = weakSelf;
         if (strongSelf) {
-            [strongSelf.collectionView deleteItemsAtIndexPaths: @[ previousIndexPath ]];
-            [strongSelf.collectionView insertItemsAtIndexPaths: @[ newIndexPath ]];
+           [strongSelf.collectionView moveItemAtIndexPath:previousIndexPath
+                                              toIndexPath:newIndexPath];
         }
     } completion: ^(BOOL finished) {
         DLog();
@@ -367,6 +367,8 @@ static NSString * const kOCACollectionViewKeyPath   = @"collectionView";
                                didMoveToIndexPath: newIndexPath];
         }
     }];
+    
+    [self invalidateLayout];
 }
 
 
@@ -620,16 +622,17 @@ static NSString * const kOCACollectionViewKeyPath   = @"collectionView";
                                       Using an assertion allows the check to be performed (at runtime) during the development process.
                                       
                                       We are using 3 "guards" to ensure the required methods are implemented:
-                                          1.  In the OCAEditableCollectionViewDelegateFlowLayout protocol definiton, we declare the method
-                                              required. However the compiler only flags this as a warning.
+                                          1.  In the OCAEditableCollectionViewDelegateFlowLayout protocol definiton, we declare the 
+                                              method is required. However the compiler only flags this as a warning.
                                           2.  The assert statement will throw an Assertion failed exception identifying the missing method.
                                               This should catch 99.999% of coding mistakes, but assertions are NOT compiled into Release builds.
-                                          3.  To cover the Release build, we throw our own "Required method not implemented" exception. There is
-                                              an argument to be made that throwing an exception is not only unnecessary (we could just fail on the
-                                              method call), but actually undesirable. Throwing an exception means the app WILL crash, and in this
-                                              case, the respondsToSelector test could just skip the method. That would result in the UI not being
-                                              updated correctly, but the user could work-around the error. I implemented an exception to illustrate
-                                              the technique - knowing that I've implemented the method and the exception will never be raised.
+                                          3.  To cover the Release build, we throw our own "Required method not implemented" exception. There 
+                                              is an argument to be made that throwing an exception is not only unnecessary (we could just fail 
+                                              on the method call), but actually undesirable. Throwing an exception means the app WILL crash, 
+                                              and in this case, the respondsToSelector test could just skip the method. That would result in 
+                                              the UI not being updated correctly, but the user could work-around the error. I implemented an 
+                                              exception to illustrate the technique - knowing that I've implemented the method and the 
+                                              exception will never be raised.
                                       */
                                      assert([strongSelf.delegate respondsToSelector: @selector(collectionView:layout:didBeginDraggingItemAtIndexPath:)]);
                                      if ([strongSelf.delegate respondsToSelector: @selector(collectionView:layout:didBeginDraggingItemAtIndexPath:)]) {
@@ -641,7 +644,8 @@ static NSString * const kOCACollectionViewKeyPath   = @"collectionView";
                                          [NSException raise: @"Required method not implemented"
                                                      format: @"collectionView:layout:didBeginDraggingItemAtIndexPath:"];
                                      }
-                                     [self.collectionView reloadData];       // TODO - this seems like overkill, why can't we just invalidate ourself?
+                                     // Invalidate the layout so collection view
+                                     [self invalidateLayout];
                                  }
                              }];
             break;
@@ -698,11 +702,9 @@ static NSString * const kOCACollectionViewKeyPath   = @"collectionView";
                                          // ...remove the rasterized image (if we don't, it would cover the real buttons and make them unclickable)
                                          [strongSelf.currentView removeFromSuperview];
                                          strongSelf.currentView = nil;
-                                         // ...and invalidate
-                                         [strongSelf.collectionView reloadData];
                                          
                                          /*
-                                          Check if the delegate has implemented collectionView:layout:didBeginDraggingItemAtIndexPath:
+                                          Check if the delegate has implemented collectionView:layout:didEndDraggingItemAtIndexPath:
                                           Using an assertion allows the check to be performed (at runtime) during the development process.
                                           
                                           We are using 3 "guards" to ensure the required methods are implemented:
@@ -876,8 +878,8 @@ static NSString * const kOCACollectionViewKeyPath   = @"collectionView";
                 [self.delegate didEndEditingForCollectionView: self.collectionView
                                                        layout: self];
             }
-            // Tell the collectionView to reload the visible cells, which will remove our delete button and stop the quivering
-            [self.collectionView reloadData];
+            // Invalidate layout which will cause collectionView to remove our delete button and stop the quivering
+            [self invalidateLayout];
         }
     }
 }
