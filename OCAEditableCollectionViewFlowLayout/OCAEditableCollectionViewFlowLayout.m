@@ -527,6 +527,7 @@ static NSString * const kOCACollectionViewKeyPath   = @"collectionView";
                     [self.delegate didBeginEditingForCollectionView: self.collectionView
                                                              layout: self];
                 }
+                [self invalidateLayout];            // TODO - [kgo 1/25/2014] probably not necessary,
             }
 
             /*
@@ -644,8 +645,8 @@ static NSString * const kOCACollectionViewKeyPath   = @"collectionView";
                                          [NSException raise: @"Required method not implemented"
                                                      format: @"collectionView:layout:didBeginDraggingItemAtIndexPath:"];
                                      }
-                                     // Invalidate the layout so collection view
-                                     [self invalidateLayout];
+                                     // Invalidate the layout to force redraw
+                                     [strongSelf invalidateLayout];
                                  }
                              }];
             break;
@@ -878,7 +879,7 @@ static NSString * const kOCACollectionViewKeyPath   = @"collectionView";
                 [self.delegate didEndEditingForCollectionView: self.collectionView
                                                        layout: self];
             }
-            // Invalidate layout which will cause collectionView to remove our delete button and stop the quivering
+            // Invalidate layout which will cause delete button to be removed and quivering to stop
             [self invalidateLayout];
         }
     }

@@ -67,7 +67,8 @@ static UIImage *deleteButtonImg;
         [self.layer setShadowColor:[[UIColor blackColor] CGColor]];
         [self.layer setShadowOffset:CGSizeMake(1.0, 3.0)];
         [self.layer setShadowOpacity:0.5];
-        [self.layer setShadowRadius:3.f];//        [self.view.layer addSublayer:sublayer];
+        [self.layer setShadowRadius:3.f];
+//        [self.view.layer addSublayer:sublayer];
         
         deleteButtonImg = UIGraphicsGetImageFromCurrentImageContext();
         CGContextRestoreGState(context);
@@ -121,10 +122,12 @@ static UIImage *deleteButtonImg;
     
     // TODO - see if we can use UIKitDynamics for the quivering behavior
     if (layoutAttributes.isDeleteButtonHidden) {
-        self.deleteButton.layer.opacity = 0.0;
+//        self.deleteButton.layer.opacity = 0.0;
+        [self.deleteButton setHidden:YES];
         [self stopQuivering];
     } else {
-        self.deleteButton.layer.opacity = 1.0;
+//        self.deleteButton.layer.opacity = 1.0;
+        [self.deleteButton setHidden:NO];
         [self startQuivering];
     }
 }
