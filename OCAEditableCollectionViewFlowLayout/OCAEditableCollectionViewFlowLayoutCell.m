@@ -1,26 +1,23 @@
 //
-//  OCACollectionViewFlowLayoutCell.m
+//  OCAEditableCollectionViewFlowLayoutCell.m
 //  KOResume
 //
 //  Created by Kevin O'Mara on 10/28/13.
 //  Copyright (c) 2013-2014 O'Mara Consulting Associates. All rights reserved.
 //
 
-#import "OCACollectionViewFlowLayoutCell.h"
+#import "OCAEditableCollectionViewFlowLayoutCell.h"
 #import "OCAEditableLayoutAttributes.h"
 #import "OCAEditableCollectionViewFlowLayout.h"
 
 #define MARGIN 10
 
-@interface OCACollectionViewFlowLayoutCell ()
-{
-@private
-    OCAEditableCollectionViewFlowLayout *deleteDelegate;
-}
+@interface OCAEditableCollectionViewFlowLayoutCell ()
 
 @end
 
-@implementation OCACollectionViewFlowLayoutCell
+@implementation OCAEditableCollectionViewFlowLayoutCell
+
 
 static UIImage *deleteButtonImg;
 
@@ -133,26 +130,21 @@ static UIImage *deleteButtonImg;
     
     // TODO - see if we can use UIKitDynamics for the quivering behavior
     if (layoutAttributes.isDeleteButtonHidden) {
-//        self.deleteButton.layer.opacity = 0.0;
         [self.deleteButton setHidden:YES];
         [self stopQuivering];
     } else {
-//        self.deleteButton.layer.opacity = 1.0;
         [self.deleteButton setHidden:NO];
         [self startQuivering];
-    }
-    if (layoutAttributes.deleteButtonDelegate) {
-        self->deleteDelegate = layoutAttributes.deleteButtonDelegate;
     }
 }
 
 //----------------------------------------------------------------------------------------------------------
 - (void)didPressDeleteButton
 {
+    assert(self.deleteDelegate);
     DLog();
     
-    assert(deleteDelegate);
-    [deleteDelegate didPressDeleteButton: [self.contentView center]];
+    [_deleteDelegate deleteCell: self];
 }
 
 @end

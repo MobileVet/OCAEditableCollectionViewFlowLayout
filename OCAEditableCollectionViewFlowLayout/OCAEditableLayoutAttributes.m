@@ -15,7 +15,6 @@
 {
     OCAEditableLayoutAttributes *attributes = [super copyWithZone:zone];
     attributes.deleteButtonHidden           = _deleteButtonHidden;
-    attributes.deleteButtonDelegate         = _deleteButtonDelegate;
     
     return attributes;
 }
@@ -30,8 +29,7 @@
     // If the base attributes are equal and the object is of our class
     if (result && [object isKindOfClass:[self class]]) {
         // Compare to our attributes
-        BOOL ourResults = (self.deleteButtonHidden   == ((OCAEditableLayoutAttributes *) object).deleteButtonHidden) &&
-                          (self.deleteButtonDelegate == ((OCAEditableLayoutAttributes *) object).deleteButtonDelegate);
+        BOOL ourResults = (self.deleteButtonHidden == ((OCAEditableLayoutAttributes *) object).deleteButtonHidden);
         // ...and return super's result AND'd with our's
         return result && ourResults;
     }

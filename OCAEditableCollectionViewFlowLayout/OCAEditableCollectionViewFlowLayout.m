@@ -414,12 +414,12 @@ static NSString * const kOCACollectionViewKeyPath   = @"collectionView";
  
  Implements the can, will, didDelete (optional) methods on the datasource delegate.
  */
-- (void)didPressDeleteButton:(CGPoint)cellCenterPoint
+- (void)deleteCell:(OCAEditableCollectionViewFlowLayoutCell *)cell
 {
-    DLog();
+    DLog(@"cell=[%@]", cell.debugDescription);
     
     // Get the indexPath of the cell
-    NSIndexPath *currentIndexPath = [self.collectionView indexPathForItemAtPoint: cellCenterPoint];
+    NSIndexPath *currentIndexPath = [self.collectionView indexPathForCell:cell];
     DLog(@"currentIndexPath=%@", currentIndexPath.debugDescription);
     
     // If the delegate wants to OK deleting items
@@ -437,7 +437,7 @@ static NSString * const kOCACollectionViewKeyPath   = @"collectionView";
     if ([self.dataSource respondsToSelector: @selector(collectionView:willDeleteItemAtIndexPath:)]) {
         // ...if so, inform the delegate we are deleting the item at indexPath
         [self.dataSource collectionView: self.collectionView
-              willDeleteItemAtIndexPath: self.selectedItemIndexPath];
+              willDeleteItemAtIndexPath: currentIndexPath];
     }
     
     // ...and finally, the delete the item using the collectionView's performBatchUpdates
@@ -464,7 +464,6 @@ static NSString * const kOCACollectionViewKeyPath   = @"collectionView";
     }];
     
     [self invalidateLayout];
-    
 }
 
 #pragma mark - OCAEditableLayoutAttributes helper methods
