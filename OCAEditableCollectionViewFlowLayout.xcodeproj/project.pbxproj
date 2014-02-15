@@ -77,7 +77,7 @@
 		D6988A0D1883182100DEC402 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.documentation; path = index.html; sourceTree = "<group>"; };
 		D6988A0F1883182100DEC402 /* OCAEditableCollectionViewDataSource.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.documentation; path = OCAEditableCollectionViewDataSource.html; sourceTree = "<group>"; };
 		D6988A101883182100DEC402 /* OCAEditableCollectionViewDelegateFlowLayout.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html.documentation; path = OCAEditableCollectionViewDelegateFlowLayout.html; sourceTree = "<group>"; };
-		D6C22C171881C15B008014C7 /* Readme.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme.markdown; sourceTree = "<group>"; };
+		D6C22C171881C15B008014C7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		D6C7AA17186F5DC500C72A52 /* libOCAEditableCollectionViewFlowLayout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOCAEditableCollectionViewFlowLayout.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6C7AA1A186F5DC500C72A52 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D6C7AA1E186F5DC500C72A52 /* OCAEditableCollectionViewFlowLayout-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OCAEditableCollectionViewFlowLayout-Prefix.pch"; sourceTree = "<group>"; };
@@ -183,7 +183,7 @@
 		D6C7AA0E186F5DC500C72A52 = {
 			isa = PBXGroup;
 			children = (
-				D6C22C171881C15B008014C7 /* Readme.markdown */,
+				D6C22C171881C15B008014C7 /* README.md */,
 				D69889FD1883182100DEC402 /* Documentation */,
 				D6C7AA1C186F5DC500C72A52 /* OCAEditableCollectionViewFlowLayout */,
 				D6C7AA30186F5DC500C72A52 /* OCAEditableCollectionViewFlowLayoutTests */,
@@ -341,7 +341,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#appledoc Xcode script\n# Start constants\ncompany=\"OMaraConsultingAssociates\";\ncompanyID=\"com.omaraconsultingassoc\";\ncompanyURL=\"http://omaraconsultingassoc.com\";\ntarget=\"iphoneos\";\n#target=\"macosx\";\noutputPath=\"/tmp/appledoc\";\n# End constants\n/usr/local/bin/appledoc \\\n--project-name \"${PROJECT_NAME}\" \\\n--project-company \"${company}\" \\\n--company-id \"${companyID}\" \\\n--docset-atom-filename \"${company}.atom\" \\\n--docset-feed-url \"${companyURL}/${company}/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"${companyURL}/${company}/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"${companyURL}/${company}\" \\\n--output \"${outputPath}\" \\\n--publish-docset \\\n--docset-platform-family \"${target}\" \\\n--logformat xcode \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--ignore \"*.m\" \\\n--exit-threshold 2 \\\n--index-desc \"${PROJECT_DIR}/Readme.markdown\" \\\n\"${PROJECT_DIR}\"\necho \"Build successful, copying to project folder \"\necho ${PROJECT_DIR}/Documentation\nrsync -rv ${outputPath}/html ${PROJECT_DIR}/Documentation\n";
+			shellScript = "#appledoc Xcode script\n# Start constants\ncompany=\"OMaraConsultingAssociates\";\ncompanyID=\"com.omaraconsultingassoc\";\ncompanyURL=\"http://omaraconsultingassoc.com\";\ntarget=\"iphoneos\";\n#target=\"macosx\";\noutputPath=\"/tmp/appledoc\";\n# End constants\n/usr/local/bin/appledoc \\\n--project-name \"${PROJECT_NAME}\" \\\n--project-company \"${company}\" \\\n--company-id \"${companyID}\" \\\n--docset-atom-filename \"${company}.atom\" \\\n--docset-feed-url \"${companyURL}/${company}/%DOCSETATOMFILENAME\" \\\n--docset-package-url \"${companyURL}/${company}/%DOCSETPACKAGEFILENAME\" \\\n--docset-fallback-url \"${companyURL}/${company}\" \\\n--output \"${outputPath}\" \\\n--publish-docset \\\n--docset-platform-family \"${target}\" \\\n--logformat xcode \\\n--keep-intermediate-files \\\n--no-repeat-first-par \\\n--no-warn-invalid-crossref \\\n--ignore \"*.m\" \\\n--exit-threshold 2 \\\n--index-desc \"${PROJECT_DIR}/README.md\" \\\n\"${PROJECT_DIR}\"\necho \"Build successful, copying to project folder \"\necho ${PROJECT_DIR}/Documentation\nrsync -rv ${outputPath}/html ${PROJECT_DIR}/Documentation\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
