@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@class OCAEditableCollectionViewFlowLayout;
-
 /**
  This class adds properties to the layout to support editing collection views
  */
@@ -19,10 +17,5 @@
  Controls whether the cell's delete button should be shown or hidden.
  */
 @property (assign, nonatomic, getter = isDeleteButtonHidden) BOOL deleteButtonHidden;
-
-/**
- Delegate to handle the delete button
- */
-@property (strong, nonatomic) OCAEditableCollectionViewFlowLayout *deleteButtonDelegate;
 
 @end

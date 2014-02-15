@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "OCACollectionViewFlowLayoutCell.h"
+#import "OCAEditableCollectionViewFlowLayoutCell.h"
 
 /**
  This class adds the ability to delete and/or re-order the UICollectionViewCells in the layout.
@@ -42,7 +42,7 @@
  
  */
 
-@interface OCAEditableCollectionViewFlowLayout : UICollectionViewFlowLayout <UIGestureRecognizerDelegate, OCACollectionViewFlowLayoutCellDelegate>
+@interface OCAEditableCollectionViewFlowLayout : UICollectionViewFlowLayout <UIGestureRecognizerDelegate, OCAEditableCollectionViewFlowLayoutCellDelegate>
 
 /**
  Controls the collection view's scrolling speed
@@ -102,6 +102,18 @@
 canMoveItemAtIndexPath: (NSIndexPath *)indexPath;
 
 /**
+ Ask the delegate if the cell at fromIndexPath can be moved to toIndexPath.
+ 
+ @param collectionView  the UICollectionView containing the cell.
+ @param fromIndexPath   the indexPath of the cell to move.
+ @param toIndexPath     the indexPath where the cell will move.
+ @return                YES if the move is allowed, NO otherwise
+ */
+- (BOOL)collectionView: (UICollectionView *)collectionView
+       itemAtIndexPath: (NSIndexPath *)fromIndexPath
+    canMoveToIndexPath: (NSIndexPath *)toIndexPath;
+
+/**
  Inform the delegate the cell at indexPath is about to be moved.
  
  @param collectionView  the UICollectionView containing the cell.
@@ -122,18 +134,6 @@ canMoveItemAtIndexPath: (NSIndexPath *)indexPath;
 - (void)collectionView: (UICollectionView *)collectionView
        itemAtIndexPath: (NSIndexPath *)fromIndexPath
     didMoveToIndexPath: (NSIndexPath *)toIndexPath;
-
-/**
- Ask the delegate if the cell at fromIndexPath can be moved to toIndexPath.
- 
- @param collectionView  the UICollectionView containing the cell.
- @param fromIndexPath   the indexPath of the cell to move.
- @param toIndexPath     the indexPath where the cell will move.
- @return                YES if the move is allowed, NO otherwise
- */
-- (BOOL)collectionView: (UICollectionView *)collectionView
-       itemAtIndexPath: (NSIndexPath *)fromIndexPath
-    canMoveToIndexPath: (NSIndexPath *)toIndexPath;
 
 /**
  Ask the delegate if the cell at indexPath can be deleted.
@@ -192,6 +192,17 @@ canMoveItemAtIndexPath: (NSIndexPath *)indexPath;
                                 layout: (UICollectionViewLayout *)collectionViewLayout;
 
 /**
+ Inform the delegate dragging of a cell will begin
+ 
+ @param collectionView          the UICollectionView being edited.
+ @param collectionViewLayout    the layout responsible for the editing
+ @param indexPath               the indexPath where the dragging will begin
+ */
+- (void)            collectionView: (UICollectionView *)collectionView
+                            layout: (UICollectionViewLayout *)collectionViewLayout
+  willBeginDraggingItemAtIndexPath: (NSIndexPath *)indexPath;
+
+/**
  Inform the delegate dragging of a cell has begun
  
  @param collectionView          the UICollectionView being edited.
@@ -214,17 +225,6 @@ canMoveItemAtIndexPath: (NSIndexPath *)indexPath;
      didEndDraggingItemAtIndexPath: (NSIndexPath *)indexPath;
 
 @optional
-
-/**
- Inform the delegate dragging of a cell will begin
- 
- @param collectionView          the UICollectionView being edited.
- @param collectionViewLayout    the layout responsible for the editing
- @param indexPath               the indexPath where the dragging will begin
- */
-- (void)            collectionView: (UICollectionView *)collectionView
-                            layout: (UICollectionViewLayout *)collectionViewLayout
-  willBeginDraggingItemAtIndexPath: (NSIndexPath *)indexPath;
 
 /**
  Inform the delegate dragging of a cell will end
