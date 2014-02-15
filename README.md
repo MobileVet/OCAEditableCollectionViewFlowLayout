@@ -35,7 +35,7 @@ TBD
 ###Minimum system requirements
 ---------------------------
 
-- Xcode 5 or greater for compiling
+- Xcode 5 or greater
 - iOS 7 or greater
 
 License
