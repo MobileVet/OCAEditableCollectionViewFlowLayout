@@ -171,7 +171,7 @@ canMoveItemAtIndexPath: (NSIndexPath *)indexPath;
  */
 @protocol OCAEditableCollectionViewDelegateFlowLayout <UICollectionViewDelegateFlowLayout>
 
-@required
+@optional
 
 /**
  Inform the delegate editing of the layout has begun
