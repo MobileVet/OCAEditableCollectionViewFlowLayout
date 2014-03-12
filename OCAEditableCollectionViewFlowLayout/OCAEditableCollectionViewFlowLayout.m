@@ -612,12 +612,16 @@ static NSString * const kOCACollectionViewKeyPath   = @"collectionView";
              Animate the selected cell 10% larger than normal
              */
             // First, get the cell selected cell
-            OCAEditableCollectionViewFlowLayoutCell *collectionViewCell = (OCAEditableCollectionViewFlowLayoutCell *)[self.collectionView cellForItemAtIndexPath: self.selectedItemIndexPath];
+            UICollectionViewCell *collectionViewCell = [self.collectionView cellForItemAtIndexPath: self.selectedItemIndexPath];
             
             //Hide the delete button before creating the "rasterizedImage" so that the draggable view doesn't contains the delete button image.
-            OCAEditableLayoutAttributes *hiddenDeleteButtonAttribute = [[OCAEditableLayoutAttributes alloc] init];
-            hiddenDeleteButtonAttribute.deleteButtonHidden = YES;
-            [collectionViewCell applyLayoutAttributes:hiddenDeleteButtonAttribute];
+            if ([collectionViewCell isKindOfClass:[OCAEditableCollectionViewFlowLayoutCell class]]) {
+                OCAEditableCollectionViewFlowLayoutCell *ocaLayoutCollectionViewCell = (OCAEditableCollectionViewFlowLayoutCell *)collectionViewCell;
+                OCAEditableLayoutAttributes *hiddenDeleteButtonAttribute = [[OCAEditableLayoutAttributes alloc] init];
+                hiddenDeleteButtonAttribute.deleteButtonHidden = YES;
+                [ocaLayoutCollectionViewCell applyLayoutAttributes:hiddenDeleteButtonAttribute];
+            }
+            
             
             // Make a new UIView with a frame matching the selected cell's
             self.currentView = [[UIView alloc] initWithFrame: collectionViewCell.frame];
