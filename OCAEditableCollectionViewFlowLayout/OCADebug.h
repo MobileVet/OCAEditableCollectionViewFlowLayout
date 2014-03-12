@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define IOS_7_0_OR_ABOVE !([[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] == NSOrderedAscending)
+
 /**
  Logging macros copied from OCAUtilities (see https://github.com/kgomara/OCAUtilities for details).
  
