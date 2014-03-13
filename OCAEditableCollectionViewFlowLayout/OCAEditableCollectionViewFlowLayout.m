@@ -614,6 +614,15 @@ static NSString * const kOCACollectionViewKeyPath   = @"collectionView";
             // First, get the cell selected cell
             UICollectionViewCell *collectionViewCell = [self.collectionView cellForItemAtIndexPath: self.selectedItemIndexPath];
             
+            //Hide the delete button before creating the "rasterizedImage" so that the draggable view doesn't contains the delete button image.
+            if ([collectionViewCell isKindOfClass:[OCAEditableCollectionViewFlowLayoutCell class]]) {
+                OCAEditableCollectionViewFlowLayoutCell *ocaLayoutCollectionViewCell = (OCAEditableCollectionViewFlowLayoutCell *)collectionViewCell;
+                OCAEditableLayoutAttributes *hiddenDeleteButtonAttribute = [[OCAEditableLayoutAttributes alloc] init];
+                hiddenDeleteButtonAttribute.deleteButtonHidden = YES;
+                [ocaLayoutCollectionViewCell applyLayoutAttributes:hiddenDeleteButtonAttribute];
+            }
+            
+            
             // Make a new UIView with a frame matching the selected cell's
             self.currentView = [[UIView alloc] initWithFrame: collectionViewCell.frame];
             

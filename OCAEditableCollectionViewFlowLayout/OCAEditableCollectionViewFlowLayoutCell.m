@@ -53,7 +53,11 @@ static UIImage *deleteButtonImg;
         [path addLineToPoint: CGPointMake(sz-MARGIN, sz-MARGIN)];
         [path moveToPoint: CGPointMake(MARGIN, sz-MARGIN)];
         [path addLineToPoint: CGPointMake(sz-MARGIN, MARGIN)];
-        [[self tintColor] setFill];
+        
+        if (IOS_7_0_OR_ABOVE) {     //This change will enable it to work in iOS 6 as well.
+            [[self tintColor] setFill];
+        }
+        
         [[UIColor lightGrayColor] setStroke];
         [path setLineWidth: 2.0];
         [path fill];

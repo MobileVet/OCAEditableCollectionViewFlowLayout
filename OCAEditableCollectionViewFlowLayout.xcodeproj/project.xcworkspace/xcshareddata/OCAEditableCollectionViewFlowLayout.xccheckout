@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D1F90ADA-C15B-48EF-8467-D271C029875E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>OCAEditableCollectionViewFlowLayout</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D3B7CB08-9FA2-40A3-B7A5-7D8509BDC3B6</key>
+		<string>https://github.com/gauravlnx/OCAEditableCollectionViewFlowLayout.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>OCAEditableCollectionViewFlowLayout.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D3B7CB08-9FA2-40A3-B7A5-7D8509BDC3B6</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/gauravlnx/OCAEditableCollectionViewFlowLayout.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D3B7CB08-9FA2-40A3-B7A5-7D8509BDC3B6</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D3B7CB08-9FA2-40A3-B7A5-7D8509BDC3B6</string>
+			<key>IDESourceControlWCCName</key>
+			<string>OCAEditableCollectionViewFlowLayout</string>
+		</dict>
+	</array>
+</dict>
+</plist>
