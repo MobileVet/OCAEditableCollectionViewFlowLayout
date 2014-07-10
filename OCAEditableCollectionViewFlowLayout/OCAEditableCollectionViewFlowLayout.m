@@ -219,7 +219,7 @@ static NSString * const kOCACollectionViewKeyPath   = @"collectionView";
 
 
 //----------------------------------------------------------------------------------------------------------
-- (id)init
+- (instancetype)init
 {
     DLog();
     
@@ -232,7 +232,7 @@ static NSString * const kOCACollectionViewKeyPath   = @"collectionView";
 
 
 //----------------------------------------------------------------------------------------------------------
-- (id)initWithCoder: (NSCoder *)aDecoder
+- (instancetype)initWithCoder: (NSCoder *)aDecoder
 {
     DLog();
     
