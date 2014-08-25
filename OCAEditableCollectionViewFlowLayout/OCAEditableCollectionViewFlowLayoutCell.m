@@ -54,7 +54,7 @@ static UIImage *deleteButtonImg;
         [path moveToPoint: CGPointMake(MARGIN, sz-MARGIN)];
         [path addLineToPoint: CGPointMake(sz-MARGIN, MARGIN)];
         
-        if (IOS_7_0_OR_ABOVE) {     //This change will enable it to work in iOS 6 as well.
+        if (IOS_7_0_OR_ABOVE) {
             [[self tintColor] setFill];
         }
         
@@ -62,7 +62,7 @@ static UIImage *deleteButtonImg;
         [path setLineWidth: 2.0];
         [path fill];
         [path stroke];
-        // TODO - add drop shadow
+#warning TODO - add drop shadow
 //        CALayer *sublayer = [CALayer layer];
 //        sublayer.backgroundColor = [UIColor blueColor].CGColor;
 //        sublayer.shadowOffset = CGSizeMake(0, 3);

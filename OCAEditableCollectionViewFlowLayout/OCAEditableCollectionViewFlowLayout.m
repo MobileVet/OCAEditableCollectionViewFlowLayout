@@ -450,7 +450,13 @@ static NSString * const kOCACollectionViewKeyPath   = @"collectionView";
         DLog();
         __strong typeof(self) strongSelf = weakSelf;
         if (strongSelf) {
-            [strongSelf.collectionView deleteItemsAtIndexPaths:@[currentIndexPath]];
+            @try {
+                [strongSelf.collectionView deleteItemsAtIndexPaths:@[currentIndexPath]];
+            }
+            @catch (NSException *except)
+            {
+                NSLog(@"DEBUG: failure to batch update.  %@", except.description);
+            }
         }
     } completion: ^(BOOL finished) {
         DLog();
