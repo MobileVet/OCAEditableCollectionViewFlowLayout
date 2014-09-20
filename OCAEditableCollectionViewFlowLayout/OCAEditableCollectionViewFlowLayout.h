@@ -202,6 +202,8 @@ canMoveItemAtIndexPath: (NSIndexPath *)indexPath;
                             layout: (UICollectionViewLayout *)collectionViewLayout
   willBeginDraggingItemAtIndexPath: (NSIndexPath *)indexPath;
 
+@required
+
 /**
  Inform the delegate dragging of a cell has begun
  

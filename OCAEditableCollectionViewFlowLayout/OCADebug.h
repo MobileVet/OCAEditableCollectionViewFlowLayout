@@ -44,11 +44,13 @@
  with the rest of the NSError information.
  */
 
-#ifdef DEBUG
-#   define DLog(_fmt, ...) NSLog((@"%s [Line %d] " _fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
-#else
-#   define DLog(...)
-#endif
+//#ifdef DEBUG
+//#define DLog(_fmt, ...) NSLog((@"%s [Line %d] " _fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+//#else
+//#define DLog(...)
+//#endif
+
+#define DLog(...)
 
 // ALog always display output regardless of the DEBUG setting.
 #define ALog(_fmt, ...) NSLog((@"%s [Line %d] " _fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
